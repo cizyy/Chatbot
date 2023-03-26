@@ -1,9 +1,9 @@
 import openai
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
-openai.api_key = "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"
+openai.api_key = "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"
 engine = "text-davinci-003"
 temperature = 0.6
 max_tokens = 150
