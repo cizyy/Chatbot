@@ -1,9 +1,9 @@
-import openai
 from flask import Flask, render_template, request
+import openai
 
 app = Flask(__name__, template_folder='templates')
 
-openai.api_key = "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"
+openai.api_key = "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"
 engine = "text-davinci-003"
 temperature = 0.6
 max_tokens = 150
@@ -30,9 +30,6 @@ def index():
             chat_history.append("AI: " + question)
             answer = askGPT("Human: " + chat_history[-2] + "\nAI: " + question + "\nAI: ")
             chat_history.append("Human: " + answer)
-        render_template('index.html', chat_history=chat_history)
+        return render_template('index.html', chat_history=chat_history)
     else:
-        render_template('index.html', chat_history=chat_history)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+        return render_template('index.html', chat_history=chat_history)
