@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__, template_folder='templates')
 
-openai.api_key = "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"
+openai.api_key = "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"
 engine = "text-davinci-003"
 temperature = 0.6
 max_tokens = 150
@@ -30,9 +30,9 @@ def index():
             chat_history.append("AI: " + question)
             answer = askGPT("Human: " + chat_history[-2] + "\nAI: " + question + "\nAI: ")
             chat_history.append("Human: " + answer)
-        return render_template('index.html', chat_history=chat_history)
+        render_template('templates/index.html', chat_history=chat_history)
     else:
-        return render_template('index.html', chat_history=chat_history)
+        render_template('templates/index.html', chat_history=chat_history)
 
 if __name__ == '__main__':
     app.run(debug=True)
