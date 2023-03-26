@@ -30,9 +30,9 @@ def index():
             chat_history.append("AI: " + question)
             answer = askGPT("Human: " + chat_history[-2] + "\nAI: " + question + "\nAI: ")
             chat_history.append("Human: " + answer)
-        return render_template('templates/index.html', chat_history=chat_history)
+        return render_template('index.html', chat_history=chat_history)
     else:
-        return render_template('templates/index.html', chat_history=chat_history)
+        return render_template('index.html', chat_history=chat_history)
 
 if __name__ == '__main__':
     app.run(debug=True)
