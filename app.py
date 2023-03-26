@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__, template_folder='templates')
 
-openai.api_key = "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"
+openai.api_key = "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"
 engine = "text-davinci-003"
 temperature = 0.6
 max_tokens = 150
