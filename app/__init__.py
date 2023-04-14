@@ -3,7 +3,7 @@ import openai
 
 app = Flask(__name__, template_folder='templates')
 
-openai.api_key = "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"
+openai.api_key = "API KEY GOES HERE"
 engine = "text-davinci-003"
 temperature = 0.6
 max_tokens = 150
